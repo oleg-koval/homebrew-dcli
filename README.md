@@ -24,9 +24,9 @@ Create `~/.dcli/config.yaml`:
 
 ```yaml
 repositories:
-  - path: /path/to/repo1
+  - path: /Users/username/projects/repo1  # Use absolute path
     name: repo1
-  - path: /path/to/repo2
+  - path: /Users/username/projects/repo2  # Use absolute path
     name: repo2
 ```
 
