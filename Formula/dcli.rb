@@ -5,7 +5,7 @@
 class Dcli < Formula
   desc "Lightweight Docker Compose and Git management CLI"
   homepage "https://github.com/oleg-koval/dcli"
-  version "0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a"
+  version "0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b"
   license "MIT"
 
   depends_on "docker" => :optional
@@ -13,16 +13,16 @@ class Dcli < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a/dcli-0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-darwin-amd64.tar.gz"
-      sha256 "bd6d8380592009f1f51ac85752a6f380bee1a380a387e878fc49d66063dccc0b"
+      url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b/dcli-0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b-darwin-amd64.tar.gz"
+      sha256 "fa3ab749989e7c6a3e1982ba7cd324e242b3deec4bdc8d5220515a6c632dbc52"
 
       def install
         bin.install "dcli"
       end
     end
     on_arm do
-      url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a/dcli-0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-darwin-arm64.tar.gz"
-      sha256 "6163c3ca19925199baa8c81d4d502d79b6ce4d9daaa94aa2361da522cfce0f44"
+      url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b/dcli-0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b-darwin-arm64.tar.gz"
+      sha256 "95109bff2ef1c605672a4a34e5431e7ef4ec0cc6e19eb27784e2dcf1282be672"
 
       def install
         bin.install "dcli"
@@ -33,8 +33,8 @@ class Dcli < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a/dcli-0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-linux-amd64.tar.gz"
-        sha256 "45ac84db8f24b1db38221aca5b4750e4d07dc411dc0692ca79c025edb5933bac"
+        url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b/dcli-0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b-linux-amd64.tar.gz"
+        sha256 "2fad98ab9c9c179ca6b311d0972e5c07b1d7f842ea6e7d6e82099e084a5d0542"
 
         def install
           bin.install "dcli"
@@ -43,8 +43,8 @@ class Dcli < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a/dcli-0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-linux-arm64.tar.gz"
-        sha256 "2ddc3e9ac57b62760e4d96e24f20aabdf36fec55d9a7737a73b494c1c78c2df8"
+        url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b/dcli-0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b-linux-arm64.tar.gz"
+        sha256 "b47f65147eca4b9e2d11941853b1a8ba7c0968bf99c46d26bb843a09acbefe54"
 
         def install
           bin.install "dcli"
