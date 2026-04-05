@@ -5,50 +5,44 @@
 class Dcli < Formula
   desc "Lightweight Docker Compose and Git management CLI"
   homepage "https://github.com/oleg-koval/dcli"
-  version "0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b-2-gc3ccd8e-1-g84096fa-1-g8538b43-1-g4c0d6b1-1-g27a92e7"
+  version "0.1.0+9f54395"
   license "MIT"
 
   depends_on "docker" => :optional
   depends_on "git" => :optional
 
   on_macos do
-    on_intel do
-      url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b-2-gc3ccd8e-1-g84096fa-1-g8538b43-1-g4c0d6b1-1-g27a92e7/dcli-0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b-2-gc3ccd8e-1-g84096fa-1-g8538b43-1-g4c0d6b1-1-g27a92e7-darwin-amd64.tar.gz"
-      sha256 "3547d1b2b3230f29f273b8240b35d1bdcd9c89f20238f2f65cdb3919afd93ecd"
+    if Hardware::CPU.intel?
+      url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0+9f54395/dcli-0.1.0+9f54395-darwin-amd64.tar.gz"
+      sha256 "c72cdf40dc01f706e989aebc1ce7d6657ccb4d10a62e66cc26e6e393f388131d"
 
-      def install
+      define_method(:install) do
         bin.install "dcli"
       end
     end
-    on_arm do
-      url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b-2-gc3ccd8e-1-g84096fa-1-g8538b43-1-g4c0d6b1-1-g27a92e7/dcli-0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b-2-gc3ccd8e-1-g84096fa-1-g8538b43-1-g4c0d6b1-1-g27a92e7-darwin-arm64.tar.gz"
-      sha256 "0b0508f0b09b82ac82135b71cd2c6e8972d793fb7b9c2a4e901ce4233f351550"
+    if Hardware::CPU.arm?
+      url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0+9f54395/dcli-0.1.0+9f54395-darwin-arm64.tar.gz"
+      sha256 "7fd9903360e79ce69e023b412ac9a32b0bed9d3b178130d50233fcdd1a4eebfa"
 
-      def install
+      define_method(:install) do
         bin.install "dcli"
       end
     end
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b-2-gc3ccd8e-1-g84096fa-1-g8538b43-1-g4c0d6b1-1-g27a92e7/dcli-0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b-2-gc3ccd8e-1-g84096fa-1-g8538b43-1-g4c0d6b1-1-g27a92e7-linux-amd64.tar.gz"
-        sha256 "4fe0bac9a52ec5349c621601b98278eaffe0586a7081e9143fceee2962127e8f"
-
-        def install
-          bin.install "dcli"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0+9f54395/dcli-0.1.0+9f54395-linux-amd64.tar.gz"
+      sha256 "5d09b41da8f38c538453872fc33efcc2c10ebefd087e747912ea74c2abbfb8a3"
+      define_method(:install) do
+        bin.install "dcli"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b-2-gc3ccd8e-1-g84096fa-1-g8538b43-1-g4c0d6b1-1-g27a92e7/dcli-0.1.0-27-g0a0e277-1-gad83956-4-g78cec9a-1-g656142b-2-gc3ccd8e-1-g84096fa-1-g8538b43-1-g4c0d6b1-1-g27a92e7-linux-arm64.tar.gz"
-        sha256 "d0d02d7fbdaa5f903a272c6adee87f48fb81d4679f2514fb57256ec0bed4d822"
-
-        def install
-          bin.install "dcli"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/oleg-koval/dcli/releases/download/v0.1.0+9f54395/dcli-0.1.0+9f54395-linux-arm64.tar.gz"
+      sha256 "620630af75e6637a6122741046b2b9d6d08bf4a16220b87afd1cf7225a275884"
+      define_method(:install) do
+        bin.install "dcli"
       end
     end
   end
