@@ -5,7 +5,7 @@
 class Dcli < Formula
   desc "Lightweight Docker Compose and Git management CLI"
   homepage "https://github.com/oleg-koval/dcli"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   depends_on "docker" => :optional
@@ -13,16 +13,16 @@ class Dcli < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/oleg-koval/dcli/releases/download/v0.2.0/dcli-0.2.0-darwin-amd64.tar.gz"
-      sha256 "668482d41393eee1cd2c5274de9ed36b84d3af603b4aa6bded2d2a2c872fd769"
+      url "https://github.com/oleg-koval/dcli/releases/download/v0.2.1/dcli-0.2.1-darwin-amd64.tar.gz"
+      sha256 "751fa1af8030a1702c0baa79cbf51b600f724b2fe73712f9a826c7521a282d93"
 
       define_method(:install) do
         bin.install "dcli"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/oleg-koval/dcli/releases/download/v0.2.0/dcli-0.2.0-darwin-arm64.tar.gz"
-      sha256 "3a26e6d263093c1779924a5e375922da30f1c21d4d800897b7c088ffa0a6f0d6"
+      url "https://github.com/oleg-koval/dcli/releases/download/v0.2.1/dcli-0.2.1-darwin-arm64.tar.gz"
+      sha256 "4a6adaa5b075997bf94eea188de7b4db2191b31942919e08a34352e7acfdb92b"
 
       define_method(:install) do
         bin.install "dcli"
@@ -32,15 +32,15 @@ class Dcli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/oleg-koval/dcli/releases/download/v0.2.0/dcli-0.2.0-linux-amd64.tar.gz"
-      sha256 "89fda4eec5974838bab60f6580e5017d99177fc413df921fd5648b6f5d319d91"
+      url "https://github.com/oleg-koval/dcli/releases/download/v0.2.1/dcli-0.2.1-linux-amd64.tar.gz"
+      sha256 "13fa3131f9f2176480be3e29f3dc32abc3b8c9378f77139d359d9ff1213a7f2b"
       define_method(:install) do
         bin.install "dcli"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/oleg-koval/dcli/releases/download/v0.2.0/dcli-0.2.0-linux-arm64.tar.gz"
-      sha256 "ed52fb92b89f97c87565892188fb2f9e39078862326afa7b31a9092afcc2f1dc"
+      url "https://github.com/oleg-koval/dcli/releases/download/v0.2.1/dcli-0.2.1-linux-arm64.tar.gz"
+      sha256 "bcf1930b391e30a5a7a08b39308a7f4c48f28a7cc234183876b3ca42afa69e57"
       define_method(:install) do
         bin.install "dcli"
       end
